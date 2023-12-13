@@ -1,0 +1,74 @@
+# blank line on the top
+add_newline = true
+
+format = """$env_var $username [-](green) $hostname [-](green) $directory $all"""
+# format = """
+# [╭╴](grey)$username \
+# $hostname \
+# $directory \
+# $all \
+# \n[╰─](grey)$character"""
+
+[character]
+success_symbol = "[ =>](bold green)"
+# success_symbol = ""
+error_symbol = "[ =>](bold red)"
+
+[env_var.STARSHIP_DISTRO]
+format = "[$env_value](white)"
+variable = "STARSHIP_DISTRO"
+disabled = false
+
+[username]
+style_user = "white"
+style_root = "red"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bold yellow)"
+disabled = false
+
+[directory]
+# truncation_length = 5
+# truncation_symbol = ".../"
+home_symbol = " ~"
+read_only_style = "197"
+read_only = "  "
+format = "[$path]($style)[$read_only]($read_only_Style)"
+
+[git_branch]
+symbol = " "
+format = "[-](green) [$symbol$branch]($style) "
+truncation_symbol = ".../"
+style = "bold green"
+
+[git_status]
+format = '[-](green) [\($all_status$ahead_behind\)]($style) '
+style = "bold green"
+conflicted = "🏳"
+up_to_date = " "
+untracked = " "
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+stashed = " "
+modified = " "
+staged = '[++\($count\)](green)'
+renamed = "襁 "
+deleted = " "
+
+[docker_context]
+format = "[-](green) [ $context](bold blue) "
+disabled = true
+
+[python]
+symbol = " "
+python_binary = "python3"
+disabled = true
+
+[nodejs]
+format = "[-](green) [ $version](bold green) "
+disabled = true
