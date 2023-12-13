@@ -53,12 +53,12 @@ arch-chroot /mnt echo 127.0.0.1 localhost > /etc/hosts
 
 # root passwd -> TODO: does not work
 # arch-chroot /mnt echo "root:1234" | chpasswd --crypt-method SHA256 
-passwd
+arch-chroot /mnt passwd
 
 # add user -> TODO: does not work
 arch-chroot /mnt useradd -m -G wheel -s /bin/zsh vincent
 # arch-chroot /mnt echo "vincent:1234" | chpasswd --crypt-method SHA256 
-passwd vincent
+arch-chroot /mnt passwd vincent
 
 # set sudoerfile -> allow group wheel to use sudo
 arch-chroot /mnt echo "%wheel ALL=(ALL) NOPASSWD: ALL" | (EDITOR="tee -a" visudo) 
