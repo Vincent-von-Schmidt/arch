@@ -25,7 +25,7 @@ pacstrap /mnt \\
     vim \\ # text editor
     zsh \\ # prompt
     starship \\ # prompt design
-    tmux # terminal tilling window manager
+    tmux \\ # terminal tilling window manager
     alacritty \\ # terminal emulator
 
 # generate filesystem table
