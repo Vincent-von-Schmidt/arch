@@ -12,22 +12,21 @@ mount /dev/sda1 /mnt/boot/efi
 swapon /dev/sda2
 
 # install packages
-pacstrap /mnt << EOF
-    linux
-    linux-firmware
-    base
-    base-devel # sudo, etc.
-    grub # bootloader
-    efibootmgr # enables efi boot
-    networkmanager # handels the network
-    gnome gnome-tweaks # desktop
-    git
-    vim # text editor
-    zsh # prompt
-    starship # prompt design
-    tmux # terminal tilling window manager
-    alacritty # terminal emulator
-EOF
+pacstrap /mnt \
+    linux \
+    linux-firmware \
+    base \
+    base-devel \
+    grub \
+    efibootmgr \
+    networkmanager \
+    gnome gnome-tweaks \
+    git \
+    vim \
+    zsh \
+    starship \
+    tmux \
+    alacritty \
 
 # generate filesystem table
 genfstab /mnt > /mnt/etc/fstab
