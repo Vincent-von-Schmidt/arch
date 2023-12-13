@@ -72,9 +72,9 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 # -----------------------
 
 # copy the config
-cp /dotfiles/.zshrc /mnt/home/vincent/.zshrc
-cp /dotfiles/.vimrc /mnt/home/vincent/.vimrc
-cp -r /dotfiles/.config /mnt/home/vincent/.config
+cp /arch/.zshrc /mnt/home/vincent/.zshrc
+cp /arch/.vimrc /mnt/home/vincent/.vimrc
+cp -r /arch/.config /mnt/home/vincent/.config
 
 # umount every unused disk
 umount -a
